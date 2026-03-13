@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestLog - 第二人生 RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header class="status-bar pixel-border">
+            <div class="gold-display">💰 GOLD: <span id="gold-count">0</span></div>
+            <div class="title">QUEST LOG</div>
+        </header>
+
+        <section class="quest-section pixel-border">
+            <h3>今日副本 (Daily Quests)</h3>
+            <div id="daily-lock-hint" class="daily-hint hidden"></div>
+            <div class="input-group">
+                <label>⚔️ 主线: 核心成就</label>
+                <input type="text" id="q-main" placeholder="推进了什么重要进展？">
+            </div>
+            <div class="input-group">
+                <label>🍃 支线: 小确幸</label>
+                <input type="text" id="q-side" placeholder="今天开心的瞬间...">
+            </div>
+            <div class="input-group">
+                <label>🛡️ 守护: 自律行为</label>
+                <input type="text" id="q-shield" placeholder="今天克制住了什么诱惑？">
+            </div>
+            <button id="submit-quest" class="pixel-btn">交付任务 (Complete)</button>
+            <a class="pixel-link" href="history.html">📜 查看历史记录（日历）</a>
+        </section>
+
+        <div class="shop-container">
+            <section class="armory pixel-border">
+                <h3>🏆 我的大奖</h3>
+                <div id="fixed-rewards"></div>
+
+                <div class="reward-editor">
+                    <div class="input-group">
+                        <label>🎁 大奖名称</label>
+                        <input type="text" id="reward-name" placeholder="例如：周末小旅行 / 新包包">
+                    </div>
+                    <div class="input-group">
+                        <label>💰 所需金币</label>
+                        <input type="number" id="reward-cost" placeholder="例如：1000" min="1" step="50">
+                    </div>
+                    <button id="add-reward" class="pixel-btn">保存到我的大奖</button>
+                    <button id="delete-reward" class="pixel-btn danger" style="margin-top:6px;">删除当前选中的大奖</button>
+                    <div class="muted" style="margin-top:6px; font-size:11px;">
+                        点击上方某个大奖可以载入到输入框里进行编辑。<br>
+                        同名大奖会被更新金币需求；不同名字会新增一条。
+                    </div>
+                </div>
+            </section>
+
+            <section class="black-market pixel-border">
+                <h3>🎲 黎明黑市</h3>
+                <p class="hint">消耗 50 💰 开启随机奖励</p>
+                <button id="open-box" class="pixel-btn danger">开启神秘宝箱</button>
+                <div id="box-result" class="pixel-border hidden"></div>
+            </section>
+        </div>
+
+        <div id="stamp-overlay" class="hidden">MISSION PASSED</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestLog - 历史记录（日历）</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header class="status-bar pixel-border">
+            <div class="gold-display">📜 HISTORY</div>
+            <div class="title">QUEST LOG</div>
+        </header>
+
+        <section class="pixel-border">
+            <div class="calendar-header">
+                <button id="prev-month" class="pixel-btn" style="width:auto; padding:8px 12px;">◀</button>
+                <div class="calendar-title" id="cal-title"></div>
+                <button id="next-month" class="pixel-btn" style="width:auto; padding:8px 12px;">▶</button>
+            </div>
+
+            <div class="calendar-grid" id="cal-dow">
+                <div class="dow">一</div><div class="dow">二</div><div class="dow">三</div><div class="dow">四</div><div class="dow">五</div><div class="dow">六</div><div class="dow">日</div>
+            </div>
+            <div class="calendar-grid" id="cal-grid"></div>
+        </section>
+
+        <section class="pixel-border history-panel">
+            <h3>当天记录</h3>
+            <div id="day-detail" class="muted">点日历中的某一天查看内容。</div>
+            <a class="pixel-link" href="index.html">← 返回今日副本</a>
+        </section>
+    </div>
+
+    <script src="history.js"></script>
+</body>
+</html>
